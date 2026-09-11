@@ -379,9 +379,9 @@ export default function CategoryPageLayout({
 
         {/* Product Cards Grid */}
         {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
             {[1, 2, 3, 4, 5, 6].map((n) => (
-              <div key={n} className="h-80 rounded-2xl bg-slate-900/60 animate-pulse border border-slate-800" />
+              <div key={n} className="h-64 sm:h-80 rounded-2xl bg-slate-900/60 animate-pulse border border-slate-800" />
             ))}
           </div>
         ) : filteredProducts.length === 0 ? (
@@ -403,7 +403,7 @@ export default function CategoryPageLayout({
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
             {filteredProducts.map((product) => {
               const thumbnail = product.images && product.images.length > 0
                 ? urlForImage(product.images[0])?.url()

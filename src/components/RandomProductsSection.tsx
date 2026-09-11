@@ -133,15 +133,15 @@ export default function RandomProductsSection() {
   }, [fetchAndRandomizeProducts]);
 
   return (
-    <section className="py-20 bg-black border-t border-slate-800/80 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section className="py-10 sm:py-20 bg-black border-t border-slate-800/80 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-12">
         {/* Section Header */}
-        <div className="border-b border-slate-800 pb-6">
-          <div className="space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        <div className="border-b border-slate-800 pb-4 sm:pb-6">
+          <div className="space-y-2 sm:space-y-3">
+            <h2 className="text-xl sm:text-4xl font-extrabold text-white tracking-tight">
               Sản Phẩm Nổi Bật
             </h2>
-            <p className="text-slate-400 text-sm max-w-xl">
+            <p className="text-slate-400 text-xs sm:text-sm max-w-xl">
               Khám phá các mẫu thẻ bài, box và phụ kiện hot từ cả hai vũ trụ One Piece & Pokémon!
             </p>
           </div>
@@ -149,13 +149,13 @@ export default function RandomProductsSection() {
 
         {/* Product Cards Grid */}
         {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {[1, 2, 3, 4].map((n) => (
-              <div key={n} className="h-80 rounded-2xl bg-slate-900/60 animate-pulse border border-slate-800" />
+              <div key={n} className="h-64 sm:h-80 rounded-2xl bg-slate-900/60 animate-pulse border border-slate-800" />
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {products.map((product) => {
               const thumbnail = product.images && product.images.length > 0
                 ? urlForImage(product.images[0])?.url()
@@ -168,7 +168,7 @@ export default function RandomProductsSection() {
                 <div
                   key={product._id}
                   onClick={() => setSelectedProduct(product)}
-                  className="group relative bg-[#09090b] border border-slate-800 hover:border-slate-600 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                  className="group relative bg-[#09090b] border border-slate-800 hover:border-slate-600 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between cursor-pointer"
                 >
                   {/* Card Header & Image */}
                   <div className="relative aspect-square w-full bg-slate-900/90 overflow-hidden">
@@ -176,47 +176,47 @@ export default function RandomProductsSection() {
                       src={displayImage}
                       alt={product.name}
                       fill
-                      className="object-contain p-4 group-hover:scale-110 transition-transform duration-500"
+                      className="object-contain p-2 sm:p-4 group-hover:scale-110 transition-transform duration-500"
                     />
 
                     {/* Category Badge */}
-                    <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-slate-900/90 text-slate-200 border border-slate-700 backdrop-blur-md">
+                    <span className="absolute top-2 left-2 sm:top-3 sm:left-3 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider bg-slate-900/90 text-slate-200 border border-slate-700 backdrop-blur-md">
                       {product.category === "one-piece" ? "One Piece" : "Pokémon"}
                     </span>
 
                     {/* Type Badge */}
-                    <span className="absolute top-3 right-3 px-2.5 py-0.5 rounded-md text-[10px] font-semibold bg-slate-800/90 text-slate-300 border border-slate-700">
+                    <span className="absolute top-2 right-2 sm:top-3 sm:right-3 px-2 py-0.5 rounded-md text-[9px] sm:text-[10px] font-semibold bg-slate-800/90 text-slate-300 border border-slate-700 hidden sm:inline-block">
                       {product.type === "card" ? "Thẻ Bài" : product.type === "box" ? "Box" : "Phụ Kiện"}
                     </span>
 
                     {/* Hover Overlay Button */}
                     <div className="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-xs">
-                      <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 text-white border border-slate-600 font-bold text-xs shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                        <Eye className="w-4 h-4" /> Xem Chi Tiết
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-slate-800 hover:bg-slate-700 text-white border border-slate-600 font-bold text-[10px] sm:text-xs shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Xem Chi Tiết
                       </span>
                     </div>
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
-                    <div className="space-y-2">
+                  <div className="p-3 sm:p-5 space-y-2 sm:space-y-3 flex-1 flex flex-col justify-between">
+                    <div className="space-y-1 sm:space-y-2">
                       {product.rarity && (
-                        <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
-                          <Tag className="w-3 h-3 text-slate-400" /> {product.rarity}
+                        <div className="text-[9px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                          <Tag className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-slate-400" /> {product.rarity}
                         </div>
                       )}
-                      <h3 className="text-base font-bold text-slate-100 group-hover:text-white transition-colors line-clamp-2">
+                      <h3 className="text-xs sm:text-base font-bold text-slate-100 group-hover:text-white transition-colors line-clamp-2 leading-snug">
                         {product.name}
                       </h3>
                     </div>
 
-                    <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between">
-                      <span className="text-lg font-extrabold text-emerald-400">
+                    <div className="pt-2 sm:pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                      <span className="text-sm sm:text-lg font-extrabold text-emerald-400">
                         {typeof product.price === "number" ? `${product.price.toLocaleString("vi-VN")}đ` : "Liên hệ"}
                       </span>
 
-                      <span className="inline-flex items-center gap-1 text-[11px] font-medium text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
-                        <CheckCircle className="w-3 h-3 text-emerald-400" /> Còn hàng
+                      <span className="inline-flex items-center gap-1 text-[9px] sm:text-[11px] font-medium text-slate-400 bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">
+                        <CheckCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-emerald-400" /> Còn hàng
                       </span>
                     </div>
                   </div>

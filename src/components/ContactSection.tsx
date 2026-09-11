@@ -38,39 +38,39 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-black border-t border-slate-800 relative overflow-hidden">
+    <section id="contact" className="py-10 sm:py-20 bg-black border-t border-slate-800 relative overflow-hidden">
       {/* Background Glows */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#1e293b]/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-12 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto space-y-3">
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        <div className="text-center max-w-2xl mx-auto space-y-2 sm:space-y-3">
+          <h2 className="text-xl sm:text-4xl font-extrabold text-white tracking-tight">
             Thông tin liên hệ OPC Store
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
+          <p className="text-slate-400 text-xs sm:text-base">
             Shop không tích hợp giỏ hàng hay thanh toán online trực tiếp. Quý khách xem sản phẩm và liên hệ để chốt đơn & nhận tư vấn chi tiết!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* (a) Thông Tin Tĩnh (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 rounded-3xl bg-[#09090b] border border-slate-800 shadow-xl space-y-6">
-              <h3 className="text-xl font-bold text-slate-100 flex items-center gap-2">
-                <Globe className="w-5 h-5 text-slate-400" /> Thông Tin Shop
+            <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-[#09090b] border border-slate-800 shadow-xl space-y-4 sm:space-y-6">
+              <h3 className="text-base sm:text-xl font-bold text-slate-100 flex items-center gap-2">
+                <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400" /> Thông Tin Shop
               </h3>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {/* Phone / Zalo */}
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
-                  <div className="p-3 rounded-xl bg-slate-900 text-slate-300 border border-slate-800">
-                    <Phone className="w-5 h-5 text-slate-300" />
+                <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900/80 border border-slate-800">
+                  <div className="p-2.5 sm:p-3 rounded-xl bg-slate-900 text-slate-300 border border-slate-800 flex-shrink-0">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-slate-300" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-400 uppercase">SĐT & Zalo Trực Tiếp:</h4>
-                    <p className="text-slate-100 font-extrabold text-lg">0987 654 321</p>
+                    <h4 className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase">SĐT & Zalo Trực Tiếp:</h4>
+                    <p className="text-slate-100 font-extrabold text-base sm:text-lg">0987 654 321</p>
                     <a
                       href="https://zalo.me"
                       target="_blank"
@@ -83,13 +83,13 @@ export default function ContactSection() {
                 </div>
 
                 {/* Email */}
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
-                  <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                    <Mail className="w-5 h-5" />
+                <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900/80 border border-slate-800">
+                  <div className="p-2.5 sm:p-3 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex-shrink-0">
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-400 uppercase">Email:</h4>
-                    <p className="text-slate-100 font-bold text-base">opcstore0@outlook.com</p>
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase">Email:</h4>
+                    <p className="text-slate-100 font-bold text-xs sm:text-base break-all">opcstore0@outlook.com</p>
                   </div>
                 </div>
               </div>
@@ -98,9 +98,9 @@ export default function ContactSection() {
 
           {/* (b) Form Gửi Email Tự Động (7 cols) */}
           <div className="lg:col-span-7">
-            <div className="p-8 rounded-3xl bg-[#09090b] border border-slate-800 shadow-xl space-y-6">
+            <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-[#09090b] border border-slate-800 shadow-xl space-y-4 sm:space-y-6">
               <div>
-                <h3 className="text-2xl font-bold text-slate-100">Gửi Tin Nhắn Đặt Mua & Tư Vấn</h3>
+                <h3 className="text-lg sm:text-2xl font-bold text-slate-100">Gửi Tin Nhắn Đặt Mua & Tư Vấn</h3>
               </div>
 
               {status === "success" ? (
