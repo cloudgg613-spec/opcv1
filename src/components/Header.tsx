@@ -18,10 +18,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-black/90 border-b border-slate-800/80 shadow-2xl transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
         {/* Logo (Trái) */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-slate-900 border border-slate-700/60 group-hover:border-slate-500 transition-all duration-300 shadow-md">
+        <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group">
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-slate-900 border border-slate-700/60 group-hover:border-slate-500 transition-all duration-300 shadow-md flex-shrink-0">
             <Image
               src="/logo.png"
               alt="OPC Store Logo"
@@ -31,10 +31,10 @@ export default function Header() {
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-extrabold text-xl tracking-tight text-white">
+            <span className="font-extrabold text-base sm:text-xl tracking-tight text-white leading-tight">
               OPC STORE
             </span>
-            <span className="text-[10px] uppercase tracking-widest text-slate-400 font-semibold">
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-400 font-semibold">
               Card Game Collection
             </span>
           </div>

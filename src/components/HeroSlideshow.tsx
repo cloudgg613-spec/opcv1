@@ -54,7 +54,7 @@ export default function HeroSlideshow() {
   };
 
   return (
-    <section className="relative w-full h-[500px] sm:h-[600px] md:h-[680px] overflow-hidden bg-black flex items-center justify-center">
+    <section className="relative w-full h-[420px] sm:h-[550px] md:h-[680px] overflow-hidden bg-black flex items-center justify-center">
       {/* Background Slideshow Images */}
       {slides.map((slide, idx) => (
         <div
@@ -71,8 +71,8 @@ export default function HeroSlideshow() {
             className="object-cover object-center filter brightness-[0.75] contrast-105"
           />
           {/* Gradients */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-transparent to-black/60" />
         </div>
       ))}
 
@@ -80,22 +80,22 @@ export default function HeroSlideshow() {
       <div className="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-20 pointer-events-none" />
 
       {/* Overlay Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-4 sm:space-y-6 animate-fadeIn">
-        <h1 className="text-2xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-2xl leading-tight">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-3 sm:space-y-6 animate-fadeIn">
+        <h1 className="text-xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-2xl leading-snug sm:leading-tight">
           <span className="block text-slate-100">Chào mừng đến với</span>
           <span className="block text-white">OPC Store</span>
         </h1>
 
-        <p className="max-w-2xl mx-auto text-xs sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed drop-shadow-md px-2">
+        <p className="max-w-xl mx-auto text-[11px] sm:text-base md:text-xl text-slate-300 font-normal leading-normal sm:leading-relaxed drop-shadow-md px-2">
           {slides[currentIndex].subtitle}
         </p>
 
-        <div className="pt-2 sm:pt-4 flex items-center justify-center">
+        <div className="pt-1 sm:pt-4 flex items-center justify-center">
           <Link
             href={slides[currentIndex].buttonLink}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white hover:bg-slate-200 text-black font-extrabold text-xs sm:text-base shadow-xl transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-8 sm:py-4 rounded-full bg-white hover:bg-slate-200 text-black font-extrabold text-xs sm:text-base shadow-xl transition-all duration-300 hover:scale-105"
           >
-            <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
+            <Flame className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-black" />
             {slides[currentIndex].buttonText}
           </Link>
         </div>
