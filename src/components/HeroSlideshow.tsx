@@ -54,7 +54,7 @@ export default function HeroSlideshow() {
   };
 
   return (
-    <section className="relative w-full h-[620px] md:h-[700px] overflow-hidden bg-black flex items-center justify-center">
+    <section className="relative w-full h-[500px] sm:h-[600px] md:h-[680px] overflow-hidden bg-black flex items-center justify-center">
       {/* Background Slideshow Images */}
       {slides.map((slide, idx) => (
         <div
@@ -80,22 +80,22 @@ export default function HeroSlideshow() {
       <div className="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-20 pointer-events-none" />
 
       {/* Overlay Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-6 animate-fadeIn">
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white drop-shadow-2xl">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-4 sm:space-y-6 animate-fadeIn">
+        <h1 className="text-2xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-2xl leading-tight">
           <span className="block text-slate-100">Chào mừng đến với</span>
           <span className="block text-white">OPC Store</span>
         </h1>
 
-        <p className="max-w-2xl mx-auto text-base sm:text-xl text-slate-300 font-normal leading-relaxed drop-shadow-md">
+        <p className="max-w-2xl mx-auto text-xs sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed drop-shadow-md px-2">
           {slides[currentIndex].subtitle}
         </p>
 
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="pt-2 sm:pt-4 flex items-center justify-center">
           <Link
             href={slides[currentIndex].buttonLink}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white hover:bg-slate-200 text-black font-extrabold text-base shadow-xl transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white hover:bg-slate-200 text-black font-extrabold text-xs sm:text-base shadow-xl transition-all duration-300 hover:scale-105"
           >
-            <Flame className="w-5 h-5 text-black" />
+            <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
             {slides[currentIndex].buttonText}
           </Link>
         </div>
@@ -119,7 +119,7 @@ export default function HeroSlideshow() {
       </button>
 
       {/* Dots Navigation */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
         {slides.map((_, idx) => (
           <button
             key={idx}
