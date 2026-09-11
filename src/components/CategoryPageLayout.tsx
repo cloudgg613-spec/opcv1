@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo, useCallback } from "react";
 import Image from "next/image";
-import { Filter, Search, Eye, Tag, CheckCircle, XCircle, Sparkles, Layers, SlidersHorizontal } from "lucide-react";
+import { Filter, Search, Eye, Tag, CheckCircle, XCircle, Layers, SlidersHorizontal } from "lucide-react";
 import { Product, ProductCategory, ProductType } from "@/types/product";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";

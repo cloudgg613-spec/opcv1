@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { Sparkles, RefreshCw, Eye, Tag, CheckCircle } from "lucide-react";
+import { Eye, Tag, CheckCircle } from "lucide-react";
 import { Product } from "@/types/product";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
