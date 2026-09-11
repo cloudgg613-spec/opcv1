@@ -199,23 +199,29 @@ export default function RandomProductsSection() {
 
                   {/* Card Content */}
                   <div className="p-3 sm:p-5 space-y-2 sm:space-y-3 flex-1 flex flex-col justify-between">
-                    <div className="space-y-1 sm:space-y-2">
-                      {product.rarity && (
-                        <div className="text-[9px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
-                          <Tag className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-slate-400" /> {product.rarity}
-                        </div>
-                      )}
-                      <h3 className="text-xs sm:text-base font-bold text-slate-100 group-hover:text-white transition-colors line-clamp-2 leading-snug">
+                    <div className="space-y-1.5 sm:space-y-2">
+                      <div className="flex flex-wrap items-center gap-1.5 text-[10px] sm:text-[11px] font-bold">
+                        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400 uppercase text-[9px] sm:text-[10px] font-semibold shrink-0">
+                          <Tag className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-slate-400" />
+                          {product.type === "card" ? "Thẻ Bài" : product.type === "box" ? "Box" : "Phụ Kiện"}
+                        </span>
+                        {product.rarity && (
+                          <span className="inline-block px-1.5 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-300 text-[9px] sm:text-[10px] font-medium truncate max-w-full">
+                            {product.rarity}
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="text-xs sm:text-base font-bold text-slate-100 group-hover:text-white transition-colors line-clamp-2 leading-snug sm:leading-normal min-h-[2rem] sm:min-h-[2.75rem]">
                         {product.name}
                       </h3>
                     </div>
 
-                    <div className="pt-2 sm:pt-3 border-t border-slate-800/80 flex items-center justify-between">
-                      <span className="text-sm sm:text-lg font-extrabold text-emerald-400">
+                    <div className="pt-2 sm:pt-3 border-t border-slate-800/80 flex items-center justify-between gap-1">
+                      <span className="text-xs sm:text-base xl:text-lg font-extrabold text-emerald-400 truncate">
                         {typeof product.price === "number" ? `${product.price.toLocaleString("vi-VN")}đ` : "Liên hệ"}
                       </span>
 
-                      <span className="inline-flex items-center gap-1 text-[9px] sm:text-[11px] font-medium text-slate-400 bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">
+                      <span className="inline-flex items-center gap-1 text-[9px] sm:text-[11px] font-medium text-slate-400 bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800 shrink-0">
                         <CheckCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-emerald-400" /> Còn hàng
                       </span>
                     </div>
