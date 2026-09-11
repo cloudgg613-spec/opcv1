@@ -18,10 +18,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-black/90 border-b border-slate-800/80 shadow-2xl transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-14 sm:h-18 flex items-center justify-between">
         {/* Logo (Trái) */}
-        <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group">
-          <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-slate-900 border border-slate-700/60 group-hover:border-slate-500 transition-all duration-300 shadow-md flex-shrink-0">
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
+          <div className="relative w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl overflow-hidden bg-slate-900 border border-slate-700/60 group-hover:border-slate-500 transition-all duration-300 shadow-md shrink-0">
             <Image
               src="/logo.png"
               alt="OPC Store Logo"
@@ -31,24 +31,24 @@ export default function Header() {
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-extrabold text-base sm:text-xl tracking-tight text-white leading-tight">
+            <span className="font-extrabold text-sm sm:text-lg tracking-tight text-white leading-none sm:leading-tight">
               OPC STORE
             </span>
-            <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-400 font-semibold">
+            <span className="text-[8px] sm:text-[10px] uppercase tracking-widest text-slate-400 font-semibold mt-0.5 sm:mt-0">
               Card Game Collection
             </span>
           </div>
         </Link>
 
-        {/* Menu Ngang (Giữa/Phải - Clean Inline Links) */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Menu Ngang Desktop */}
+        <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-semibold transition-colors duration-200 ${
+                className={`text-xs sm:text-sm font-semibold transition-colors duration-200 ${
                   isActive
                     ? "text-white font-bold border-b-2 border-slate-300 pb-0.5"
                     : "text-slate-400 hover:text-white"
@@ -61,29 +61,29 @@ export default function Header() {
         </nav>
 
         {/* Action Button & Mobile Toggle */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
           <Link
             href="/#contact"
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white hover:bg-slate-200 text-black font-bold text-xs tracking-wide transition-all shadow-md"
+            className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white hover:bg-slate-200 text-black font-bold text-xs tracking-wide transition-all shadow-md"
           >
-            <Phone className="w-4 h-4 text-black" />
+            <Phone className="w-3.5 h-3.5 text-black" />
             Liên hệ ngay
           </Link>
 
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none"
+            className="md:hidden p-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none"
             aria-label="Toggle Menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-black border-b border-slate-800 px-4 pt-3 pb-6 space-y-2 animate-fadeIn">
+        <div className="md:hidden bg-slate-950/95 border-b border-slate-800/90 px-3 py-2.5 space-y-1 animate-fadeIn backdrop-blur-xl">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -91,9 +91,9 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all ${
+                className={`block px-3 py-2 rounded-lg text-xs font-bold transition-all ${
                   isActive
-                    ? "bg-slate-800 text-white border border-slate-700"
+                    ? "bg-slate-800 text-white border border-slate-700 shadow-sm"
                     : "text-slate-300 hover:bg-slate-900 hover:text-white"
                 }`}
               >
@@ -101,6 +101,15 @@ export default function Header() {
               </Link>
             );
           })}
+
+          <Link
+            href="/#contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex sm:hidden items-center justify-center gap-2 mt-2 px-3 py-2 rounded-lg bg-white hover:bg-slate-200 text-black font-bold text-xs transition-all shadow-sm"
+          >
+            <Phone className="w-3.5 h-3.5 text-black" />
+            Liên hệ ngay
+          </Link>
         </div>
       )}
     </header>
